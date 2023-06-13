@@ -3,8 +3,6 @@ import CustomButton from "./CustomButton";
 
 import Image from "next/image";
 
-
-
 const Hero = () => {
   const handleScroll = () => {
     const nextSection = document.getElementById("discover");
