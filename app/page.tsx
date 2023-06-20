@@ -1,6 +1,5 @@
 import { CustomFilter, Hero, SearchBar, CarCard, ShowMore } from "@/components";
 import { fuels, yearsOfProduction } from "@/constants";
-import { HomeProps } from "@/types";
 import { fetchCars } from "@/utils";
 
 // npm run dev to start dev server
