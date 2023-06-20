@@ -52,3 +52,11 @@ export interface ShowMoreProps {
   pageNumber: number;
   isNext: boolean;
 }
+
+export interface HomeProps {
+  manufacturer: string;
+  year: number;
+  fuel: string;
+  limit: number;
+  model: string;
+}
