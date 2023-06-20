@@ -5,7 +5,7 @@ import { fetchCars } from "@/utils";
 
 // npm run dev to start dev server
 
-export default async function Home({ searchParams }: HomeProps) {
+export default async function Home({ searchParams }) {
   const allCars = await fetchCars({
     manufacturer: searchParams.manufacturer || "",
     year: searchParams.year || 2022,
