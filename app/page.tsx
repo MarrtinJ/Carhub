@@ -1,7 +1,8 @@
-import { CustomFilter, Hero, SearchBar, CarCard } from "@/components";
+import { CustomFilter, Hero, SearchBar, CarCard, ShowMore } from "@/components";
 import { fuels, yearsOfProduction } from "@/constants";
 import { fetchCars } from "@/utils";
-import Image from "next/image";
+
+// npm run dev to start dev server
 
 export default async function Home({ searchParams }) {
   const allCars = await fetchCars({
@@ -13,8 +14,6 @@ export default async function Home({ searchParams }) {
   });
 
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
-
-  // console.log(allCars);
 
   return (
     <main className="overflow-hidden">
@@ -40,6 +39,10 @@ export default async function Home({ searchParams }) {
                 <CarCard car={car} />
               ))}
             </div>
+            <ShowMore
+              pageNumber={(searchParams.limit || 10) / 10}
+              isNext={(searchParams.limit || 10) > allCars.length}
+            />
           </section>
         ) : (
           <div className="home__error-container">
